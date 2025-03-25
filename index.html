@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TAYFUN TOPRAKCIOGLU</title>
+	<link rel="icon" href="https://media.licdn.com/dms/image/v2/D4D03AQEYZ9GlAj0m4Q/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1719023702480?e=1748476800&v=beta&t=15dvOTClvYm6lIOs3AYLP8cHIsBUwI_Z8mxaXOVxIuY" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body,
@@ -62,17 +63,14 @@
             margin-right: auto;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
             transition: transform 1s ease-in-out, box-shadow 0.5s ease-in-out;
-            cursor: pointer;
         }
 
         .profile-pic img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(0%) brightness(100%) contrast(100%);
+            filter: grayscale(100%) brightness(100%) contrast(100%);
         }
-
-       
 
         .social-icons {
             margin-top: 30px;
@@ -86,12 +84,27 @@
             transition: color 0.3s, transform 0.3s;
         }
 
+        /* Hover Effect for Social Icons */
         .social-icons a:hover {
-            color: #0077b5;
+            color: #777; /* Gray color */
             transform: scale(1.2);
         }
 
-   
+        .quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-top: 40px;
+            color: #555;
+            transition: color 0.5s ease;
+            text-align: center;
+        }
+
+        .author {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.2rem;
+            color: #777;
+        }
+
         @media (max-width: 600px) {
             h1 {
                 font-size: 2.5rem;
@@ -118,7 +131,7 @@
     <div class="background"></div>
     <div class="overlay"></div>
     <div class="container">
-        <div class="profile-pic" id="profilePic">
+        <div class="profile-pic">
             <img src="https://media.licdn.com/dms/image/v2/D4D03AQEYZ9GlAj0m4Q/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1719023702480?e=1748476800&v=beta&t=15dvOTClvYm6lIOs3AYLP8cHIsBUwI_Z8mxaXOVxIuY" alt="Profile Picture">
         </div>
         <h1>TAYFUN TOPRAKCIOGLU</h1>
@@ -131,33 +144,128 @@
             <a href="mailto:info@tayfuntoprakcioglu.com"><i class="fas fa-envelope"></i></a>
         </div>
     </div>
+    <div class="quote" id="quote-text"></div>
     <script>
         var userLang = navigator.language || navigator.userLanguage;
 
+        var quotes = {
+            en: [
+                { text: "The best way to predict the future is to invent it.", author: "Alan Kay" },
+                { text: "Technology is best when it brings people together.", author: "Matt Mullenweg" },
+                { text: "Success is not in what you have, but who you are.", author: "Bo Bennett" },
+                { text: "The internet is becoming the town square for the global village of tomorrow.", author: "Bill Gates" },
+                { text: "Artificial intelligence is the new electricity.", author: "AI" },
+                { text: "Computers are useless. They can only give you answers.", author: "Pablo Picasso" },
+                { text: "The more I learn about computers, the more I realize the potential of what they can do.", author: "Steve Jobs" },
+                { text: "The real question is not whether machines think, but whether men do.", author: "B.F. Skinner" },
+                { text: "In the age of technology, nothing is impossible, everything is achievable.", author: "AI" },
+                { text: "A computer is like a bicycle for the mind.", author: "Steve Jobs" },
+                { text: "The internet is the most powerful tool ever invented.", author: "AI" },
+                { text: "Success in business requires training, discipline, and hard work, but also embracing technology.", author: "AI" },
+                { text: "We are changing the world with technology.", author: "Bill Gates" },
+                { text: "The future of artificial intelligence is not in making machines more human, but in making humans more machine.", author: "AI" },
+                { text: "Technology is not a magic wand, it is a tool to solve problems.", author: "AI" },
+                { text: "The future is already here – it's just not very evenly distributed.", author: "William Gibson" },
+                { text: "The purpose of computing is insight, not numbers.", author: "Richard Hamming" },
+                { text: "Great things in business are never done by one person. They’re done by a team of people.", author: "Steve Jobs" },
+                { text: "In the world of technology, the competition is fierce, but the rewards are extraordinary.", author: "AI" },
+                { text: "The internet is the most important thing that has ever happened to humanity.", author: "AI" },
+                { text: "Success usually comes to those who are too busy to be looking for it.", author: "Henry David Thoreau" },
+                { text: "The secret of getting ahead is getting started.", author: "Mark Twain" },
+                { text: "I find that the harder I work, the more luck I seem to have.", author: "Thomas Jefferson" },
+                { text: "The best revenge is massive success.", author: "Frank Sinatra" },
+                { text: "It does not matter how slowly you go as long as you do not stop.", author: "Confucius" },
+                { text: "Keep your face always toward the sunshine—and shadows will fall behind you.", author: "Walt Whitman" },
+                { text: "If you want to achieve greatness stop asking for permission.", author: "AI" },
+                { text: "Everything you’ve ever wanted is on the other side of fear.", author: "AI" },
+                { text: "Success is not final, failure is not fatal: It is the courage to continue that counts.", author: "Winston Churchill" },
+                { text: "AI is not just a tool, it’s an opportunity to create a new world.", author: "AI" },
+                { text: "AI can help us unlock the future, one line of code at a time.", author: "AI" },
+                { text: "Technology and innovation go hand in hand to shape the future.", author: "AI" },
+                { text: "Artificial intelligence can change the world if used wisely.", author: "AI" },
+                { text: "In technology, every setback is an opportunity to innovate and improve.", author: "AI" }
+            ],
+            tr: [
+                { text: "Geleceği tahmin etmenin en iyi yolu, onu icat etmektir.", author: "Alan Kay" },
+                { text: "Teknoloji, insanları bir araya getirdiğinde en iyisidir.", author: "Matt Mullenweg" },
+                { text: "Başarı, sahip olduklarınızda değil, kim olduğunuzdadır.", author: "Bo Bennett" },
+                { text: "İnternet, yarının küresel köyünün kasaba meydanına dönüşüyor.", author: "Bill Gates" },
+                { text: "Yapay zeka, yeni elektriktir.", author: "AI" },
+                { text: "Bilgisayarlar işe yaramaz. Sadece size cevaplar verebilirler.", author: "Pablo Picasso" },
+                { text: "Bilgisayarlar hakkında daha çok şey öğrendikçe, onların ne kadar potansiyel taşıdığını fark ediyorum.", author: "Steve Jobs" },
+                { text: "Gerçek soru makinelerin düşünmesi değil, insanların düşünüp düşünmediğidir.", author: "B.F. Skinner" },
+                { text: "Teknoloji çağında hiçbir şey imkansız değildir, her şey başarılabilir.", author: "AI" },
+                { text: "Bir bilgisayar, akıl için bir bisiklet gibidir.", author: "Steve Jobs" },
+                { text: "İnternet, şimdiye kadar icat edilmiş en güçlü araçtır.", author: "AI" },
+                { text: "İş dünyasında başarı, eğitim, disiplin ve sıkı çalışmanın yanı sıra teknolojiye de kucak açmayı gerektirir.", author: "AI" },
+                { text: "Teknolojiyle dünyayı değiştiriyoruz.", author: "Bill Gates" },
+                { text: "Yapay zekanın geleceği, makineleri daha insana benzetmekte değil, insanları daha makineleştirmekte yatıyor.", author: "AI" },
+                { text: "Teknoloji bir sihirli değnek değildir, sorunları çözmek için bir araçtır.", author: "AI" },
+                { text: "Gelecek çoktan burada – sadece eşit şekilde dağılmamış durumda.", author: "William Gibson" },
+                { text: "Hesaplamanın amacı içgörü kazanmaktır, sayılar değil.", author: "Richard Hamming" },
+                { text: "İş dünyasında büyük işler, bir kişi tarafından yapılmaz. Bir takım insan tarafından yapılır.", author: "Steve Jobs" },
+                { text: "Teknoloji dünyasında rekabet çetin, ama ödüller olağanüstüdür.", author: "AI" },
+                { text: "İnternet, insanlığa olmuş en önemli şeydir.", author: "AI" },
+                { text: "Başarı, genellikle arayanlardan çok, uğraşanlara gelir.", author: "Henry David Thoreau" },
+                { text: "Öne çıkmanın sırrı, başlamaktır.", author: "Mark Twain" },
+                { text: "Daha çok çalıştıkça, daha fazla şans bulduğumu düşünüyorum.", author: "Thomas Jefferson" },
+                { text: "En iyi intikam, büyük bir başarıdır.", author: "Frank Sinatra" },
+                { text: "Ne kadar yavaş gittiğin önemli değildir, durmadığın sürece her şey yolundadır.", author: "Confucius" },
+                { text: "Yüzünü her zaman güneşe doğru çevir, gölgeler arkanızda kalır.", author: "Walt Whitman" },
+                { text: "Büyüklük elde etmek istiyorsan, izin istemeyi bırak.", author: "AI" },
+                { text: "İstediğin her şey, korkunun diğer tarafında.", author: "AI" },
+                { text: "Başarı, son değildir, başarısızlık öldürücü değildir: Önemli olan devam etme cesaretidir.", author: "Winston Churchill" },
+                { text: "Yapay zeka sadece bir araç değil, yeni bir dünya yaratma fırsatıdır.", author: "AI" },
+                { text: "Yapay zeka, her bir satır kodla geleceği açabilir.", author: "AI" },
+                { text: "Teknoloji ve yenilik, geleceği şekillendirmek için birlikte gider.", author: "AI" },
+                { text: "Yapay zeka, doğru şekilde kullanıldığında dünyayı değiştirebilir.", author: "AI" },
+                { text: "Teknolojide her geri adım, yenilik yapma fırsatıdır.", author: "AI" }
+            ]
+        };
+
+        var currentLanguage = userLang.startsWith('tr') ? 'tr' : 'en';
+
+        const getReadingTime = (text) => {
+            const words = text.split(" ").length;
+            return Math.max(5, words * 0.5); // 0.5 seconds per word, minimum 5 seconds
+        };
+
+        let currentQuoteIndex = 0;
+
+        // Function to change the quote every dynamic time
+        function changeQuote() {
+            const currentQuote = quotes[currentLanguage][currentQuoteIndex];
+            document.getElementById("quote-text").textContent = currentQuote.text;
+
+            const author = currentQuote.author ? `<span class="author">- ${currentQuote.author}</span>` : `<span class="author">- Anonim</span>`;
+            document.getElementById("quote-text").innerHTML += author;
+
+            // Calculate the time to wait before the next quote
+            const delay = getReadingTime(currentQuote.text) * 1000;
+
+            setTimeout(function () {
+                currentQuoteIndex = (currentQuoteIndex + 1) % quotes[currentLanguage].length;
+                changeQuote(); // Repeat the process
+            }, delay);
+        }
+
+        // Start the initial quote change
+        changeQuote();
+
+        // Setting the translated text based on user language
         var translatedText = "";
-        switch (userLang) {
+        switch (currentLanguage) {
             case "tr":
                 translatedText = "Merhaba! Ben geliştiriciyim, grafik tasarım, sosyal medya ve yazılım geliştirme gibi konularda uzmanım.<br><br>İletişime geçmekten çekinmeyin.";
                 break;
             case "en":
                 translatedText = "Hello! I'm a developer, specialized in graphic design, social media, and software development.<br><br>Feel free to contact me.";
                 break;
-            case "fr":
-                translatedText = "Bonjour! Je suis un développeur spécialisé en design graphique, médias sociaux et développement logiciel.<br><br>N'hésitez pas à me contacter.";
-                break;
-            case "de":
-                translatedText = "Hallo! Ich bin ein Entwickler, spezialisiert auf Grafikdesign, soziale Medien und Softwareentwicklung.<br><br>Fühlen Sie sich frei, mich zu kontaktieren.";
-                break;
             default:
                 translatedText = "Hello! I'm a developer, specialized in graphic design, social media, and software development.<br><br>Feel free to contact me.";
         }
 
         document.getElementById("intro-text").innerHTML = translatedText;
-
-        // Toggle the profile picture effect
-        document.getElementById("profilePic").addEventListener("click", function () {
-            this.classList.toggle("active");
-        });
     </script>
 </body>
 

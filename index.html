@@ -35,7 +35,8 @@
   .viewer.show{ display:block }
   .viewer .bar{ position:relative; height:54px; display:flex; align-items:center; padding:0 14px; border-bottom:1px solid rgba(0,0,0,.08); background:linear-gradient(180deg,#fff,#fff8f1) }
   .viewer .brand{ position:absolute; left:50%; transform:translateX(-50%); white-space:nowrap; font-weight:800; letter-spacing:.6px }
-  .viewer .brand a{ color:#111; text-decoration:none; padding:8px 12px; border-radius:10px } /* geniş hit-area */
+  .viewer .brand a{ color:#111; text-decoration:none; padding:8px 12px; border-radius:10px }
+
   .progress{ position:absolute; left:0; right:0; top:54px; height:3px; background:rgba(0,0,0,.06); overflow:hidden }
   .progress span{ display:block; width:35%; height:100%; background:linear-gradient(90deg,var(--accent),var(--accent-soft)); animation:indet 1.1s ease-in-out infinite }
   @keyframes indet{0%{transform:translateX(-100%)}100%{transform:translateX(300%)}}
@@ -44,7 +45,6 @@
   /* Profil + halka */
   .profile-pic{ width:180px; aspect-ratio:1/1; border-radius:50%; position:relative; margin:0 auto 14px; overflow:visible; transition:transform .22s ease }
   .profile-pic:hover{ transform:scale(1.03) }
-  .profile-pic img{ width:100%; height:100%; object-fit:cover; border-radius:50%; display:block; box-shadow:0 10px 40px rgba(0,0,0,.12) }
   .profile-pic::before{
     content:""; position:absolute; inset:-8px; border-radius:50%;
     background:conic-gradient(from 0deg, var(--accent), var(--accent-soft), var(--accent));
@@ -53,16 +53,20 @@
     filter:drop-shadow(0 0 16px rgba(255,138,0,.32));
     animation:spin 4s linear infinite;
   }
-  .profile-pic.pulse::before{ animation:spin 4s linear infinite, glowPulse 1.2s ease-out 1 }
   @keyframes spin{to{transform:rotate(1turn)}}
   @keyframes glowPulse{0%{box-shadow:0 0 0 0 rgba(255,138,0,.0)}60%{box-shadow:0 0 18px 6px rgba(255,138,0,.40)}100%{box-shadow:0 0 0 0 rgba(255,138,0,.0)}}
+
+  /* Avatar butonu (reset) */
+  .profile-pic .voice-btn{ appearance:none; -webkit-appearance:none; border:0; padding:0; margin:0; width:100%; height:100%; border-radius:50%; background:transparent; cursor:pointer }
+  .profile-pic .voice-btn:focus-visible{ outline:3px solid rgba(255,138,0,.45); outline-offset:4px }
+  .profile-pic .voice-btn img{ width:100%; height:100%; object-fit:cover; border-radius:50%; box-shadow:0 10px 40px rgba(0,0,0,.12); pointer-events:none }
 
   /* Konuşma balonu */
   .hello{ position:absolute; right:-6px; top:-6px; transform:translate(40%,-40%); z-index:3; background:#111; color:#fff; padding:7px 10px; border-radius:12px; font-size:.85rem; white-space:nowrap; box-shadow:0 8px 20px rgba(0,0,0,.18); opacity:0; animation:helloPop .6s ease .4s forwards }
   .hello::after{ content:""; position:absolute; right:16px; bottom:-6px; border:6px solid transparent; border-top-color:#111 }
   @keyframes helloPop{from{transform:translate(40%,-60%) scale(.9); opacity:0} to{transform:translate(40%,-40%) scale(1); opacity:1}}
 
-  /* Başlık – periyodik glitch */
+  /* Başlık – glitch */
   h1#name{ margin:8px 0 6px; line-height:1.05; font-size:clamp(2.2rem,6vw,4rem); letter-spacing:.6px; font-weight:800; color:#111; position:relative; display:inline-block; filter:drop-shadow(0 6px 18px rgba(0,0,0,.05)) }
   h1#name.glitch{ animation:glitch-skew 450ms steps(1,end) 1 }
   h1#name.glitch::before, h1#name.glitch::after{ content:attr(data-text); position:absolute; top:0; left:0; right:0 }
@@ -77,7 +81,7 @@
   #intro .l1{ font-size:clamp(1.05rem,2.6vw,1.4rem); font-style:italic; line-height:1.6; display:block }
   #intro .l2{ font-size:clamp(1rem,2.2vw,1.2rem); margin-top:10px; display:block }
 
-  /* Sosyal ikonlar + rozetler (masaüstü) */
+  /* Sosyal ikonlar + rozetler */
   .social-wrap{ position:relative; margin-top:14px }
   .social-icons{ display:flex; gap:12px; align-items:center; justify-content:center }
   .social-icons a{ width:48px; height:48px; display:grid; place-items:center; border-radius:12px; text-decoration:none; color:#222; background:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.01)); border:1px solid rgba(0,0,0,.08); box-shadow:0 8px 20px rgba(0,0,0,.08); transition:transform .15s ease, box-shadow .18s ease, background .18s ease; outline:none; position:relative }
@@ -86,7 +90,7 @@
   .social-icons a::after{ content:attr(aria-label); position:absolute; left:50%; bottom:calc(100% + 10px); transform:translate(-50%,6px); background:#111; color:#fff; font-size:.78rem; padding:6px 8px; border-radius:8px; opacity:0; visibility:hidden; white-space:nowrap; pointer-events:none; transition:opacity .15s ease, transform .15s ease, visibility .15s ease }
   .social-icons a:hover::after, .social-icons a:focus::after{ opacity:1; visibility:visible; transform:translate(-50%,0) }
   .key{ position:absolute; right:-6px; bottom:-6px; font-size:10px; line-height:1; background:#111; color:#fff; padding:3px 4px; border-radius:6px; font-weight:700 }
-  @media (pointer:coarse){ .key{ display:none } } /* mobilde gizle */
+  @media (pointer:coarse){ .key{ display:none } }
 
   /* Nudge */
   #nudge{ position:absolute; left:50%; top:-46px; transform:translateX(-50%) translateY(6px); background:#111; color:#fff; padding:8px 12px; border-radius:10px; font-size:.85rem; opacity:0; pointer-events:none; white-space:nowrap; box-shadow:0 8px 20px rgba(0,0,0,.18); transition:opacity .25s ease, transform .25s ease }
@@ -113,12 +117,8 @@
   @media (max-width:700px){ .modal .qr, .modal .hint{ display:none } }
   @media (max-width:600px){ .profile-pic{width:140px} .social-icons{gap:10px} .quote{left:14px; right:14px; bottom:14px} }
 
-  /* SR-only canlı bölge (ekran okuyucu için) */
+  /* SR-only (canlı bölge görünmesin) */
   .sr-only{ position:absolute !important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0 }
-
-  /* Ses butonu – başta görünür, TTS başlayınca gizlenir */
-  .voice-btn{ position:fixed; right:16px; bottom:16px; z-index:60; display:block; background:#111; color:#fff; border-radius:12px; padding:10px 12px; font-weight:600; cursor:pointer; box-shadow:0 10px 28px rgba(0,0,0,.22) }
-  .voice-btn.hide{ display:none }
 </style>
 </head>
 <body>
@@ -131,7 +131,10 @@
     <div class="main" id="main">
       <div class="profile-pic" id="pfp">
         <span class="hello" id="hello">Merhaba 👋</span>
-        <img src="https://avatars.githubusercontent.com/u/9512451?v=4" alt="Profile Picture" />
+        <!-- Avatar artık buton; tıklanınca sayfayı okur -->
+        <button id="voiceBtn" class="voice-btn" aria-label="Sayfayı seslendir">
+          <img src="https://avatars.githubusercontent.com/u/9512451?v=4" alt="Profile Picture" />
+        </button>
       </div>
 
       <h1 id="name" data-text="TAYFUN TOPRAKCIOGLU">TAYFUN TOPRAKCIOGLU</h1>
@@ -160,7 +163,7 @@
     <!-- Viewer -->
     <div class="viewer" id="viewer">
       <div class="bar">
-        <div class="brand"><a href="#" id="brandHome" title="Anasayfa (H)">TAYFUN TOPRAKCIOGLU</a></div>
+        <div class="brand"><a href="#" id="brandHome" title="Anasayfa (T / Esc)">TAYFUN TOPRAKCIOGLU</a><span class="key">T</span></div>
       </div>
       <div class="progress" id="progress"><span></span></div>
       <iframe id="viewerFrame" src="about:blank" loading="lazy" referrerpolicy="no-referrer"></iframe>
@@ -186,9 +189,6 @@
     </div>
   </div>
 
-  <!-- Ses düğmesi (TTS otomatik başlamazsa görünür kalır) -->
-  <button id="voiceBtn" class="voice-btn">🔊 Dinle</button>
-
 <script>
   /* Dil */
   var userLang = navigator.language || navigator.userLanguage;
@@ -203,7 +203,7 @@
     var i=0; function tick(){ hello.textContent=msgs[i]; i=(i+1)%msgs.length; setTimeout(tick,2000) } tick();
   })();
 
-  /* Alıntılar */
+  /* Alıntılar (rotasyon) */
   var quotes = { en:[{text:"A computer is like a bicycle for the mind.",author:"Steve Jobs"},{text:"Technology is best when it brings people together.",author:"Matt Mullenweg"},{text:"The purpose of computing is insight, not numbers.",author:"Richard Hamming"}],
                  tr:[{text:"Bir bilgisayar, akıl için bir bisiklet gibidir.",author:"Steve Jobs"},{text:"Teknoloji, insanları bir araya getirdiğinde en iyisidir.",author:"Matt Mullenweg"},{text:"Hesaplamanın amacı içgörü kazanmaktır, sayılar değil.",author:"Richard Hamming"}]};
   function readDelay(t){ var w=t.split(/\s+/).length; var s=Math.floor(w*0.5); if(s<5){s=5} return s*1000 }
@@ -253,7 +253,7 @@
     if(isTR){ title.textContent="İletişim"; text.textContent="Bana e-posta yoluyla ulaşabilirsiniz."; copyBtn.textContent="E-postayı kopyala"; closeBtn.textContent="Kapat"; }
     else { title.textContent="Contact"; text.textContent="You can reach me via e-mail."; copyBtn.textContent="Copy e-mail"; closeBtn.textContent="Close"; hint.textContent="Scan the QR code or copy the e-mail below." }
     var mail="info@tayfuntoprakcioglu.com";
-    var qrData="MATMSG:TO:"+mail+";SUB:;BODY:;";
+    var qrData="mailto:"+mail;
     qr.src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data="+encodeURIComponent(qrData);
     function isMobile(){ return /Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent) || ((navigator.maxTouchPoints||0)>1 && window.innerWidth<768) }
     function open(){ modal.classList.add("show") } function close(){ modal.classList.remove("show") }
@@ -263,7 +263,7 @@
     copyBtn.addEventListener("click", function(){ try{ navigator.clipboard.writeText(mail); copyBtn.textContent=isTR?"Kopyalandı ✓":"Copied ✓"; setTimeout(function(){ copyBtn.textContent=isTR?"E-postayı kopyala":"Copy e-mail" }, 1200) }catch(err){} });
   })();
 
-  /* Viewer (AI & Blog) – marka tıklanınca geri; H veya Esc de */
+  /* Viewer (AI & Blog) – marka tıklanınca geri; T / Esc kısayolu */
   (function viewer(){
     var viewer=document.getElementById("viewer"), frame=document.getElementById("viewerFrame");
     var prog=document.getElementById("progress"), main=document.getElementById("main");
@@ -273,10 +273,10 @@
     blogBtn.addEventListener("click", function(e){ e.preventDefault(); main.classList.add("pull-up"); setTimeout(function(){ viewer.classList.add("show"); prog.style.display="block"; frame.src="https://blog.tayfuntoprakcioglu.com/" }, 2000) });
     frame.addEventListener("load", function(){ prog.style.display="none" });
     brand.addEventListener("click", function(e){ e.preventDefault(); back() });
-    document.addEventListener("keydown", function(e){ var k=(e.key||"").toLowerCase(); if(k==="escape"||k==="h"){ back() } });
+    document.addEventListener("keydown", function(e){ var k=(e.key||"").toLowerCase(); if(k==="escape"||k==="t"){ back() } });
   })();
 
-  /* Kısayol tuşları: L/I/G/B/A/M/H/Q */
+  /* Global kısayollar */
   document.addEventListener("keydown", function(e){
     var k=(e.key||"").toLowerCase();
     if(k==="l"){ document.getElementById("lnBtn").click() }
@@ -285,70 +285,61 @@
     if(k==="b"){ document.getElementById("blogBtn").click() }
     if(k==="a"){ document.getElementById("aiBtn").click() }
     if(k==="m"){ document.getElementById("mailBtn").click() }
-    if(k==="h"){ document.getElementById("brandHome").click() }
+    if(k==="t"){ document.getElementById("brandHome").click() }
     if(k==="q"){ try{ window.speechSynthesis && window.speechSynthesis.cancel() }catch(_){ } }
   });
 
-  /* --- Erişilebilirlik: otomatik ses + daha doğal ses seçimi --- */
+  /* --- Avatar tıklanınca SAYFAYI OKU --- */
   (function narrator(){
-    var synth=window.speechSynthesis, btn=document.getElementById("voiceBtn"), started=false, voice=null;
-
-    /* Ekran okuyucuya ilk anons (otomatik) */
-    var sr=document.getElementById("sr-intro");
-    sr.textContent = isTR
-      ? "Tayfun Toprakcıoğlu ana sayfası. Klavye kısayolları: L LinkedIn, I Instagram, G GitHub, B Blog, A Yapay Zeka, M Mail, H Anasayfa. Q ile sesi durdurabilirsiniz."
-      : "Tayfun Toprakcioglu home. Shortcuts: L LinkedIn, I Instagram, G GitHub, B Blog, A AI, M Mail, H Home. Press Q to stop voice.";
+    var synth=window.speechSynthesis, avatarBtn=document.getElementById("voiceBtn"), voice=null;
 
     function chooseVoice(){
       if(!synth) return;
-      var vs=synth.getVoices();
-      if(!vs || !vs.length) return;
+      var vs=synth.getVoices(); if(!vs||!vs.length) return;
       var pref = vs.filter(v=>{
         var n=(v.name||"").toLowerCase(), L=(v.lang||"").toLowerCase();
         var want = isTR ? L.startsWith("tr") : L.startsWith("en");
-        var nat = n.includes("google") || n.includes("microsoft") || n.includes("natural") || n.includes("neural");
+        var nat  = n.includes("google") || n.includes("microsoft") || n.includes("natural") || n.includes("neural");
         return want && nat;
       });
       voice = pref[0] || vs.find(v=>(isTR?v.lang.toLowerCase().startsWith("tr"):v.lang.toLowerCase().startsWith("en"))) || vs[0];
     }
-    chooseVoice();
-    if(typeof synth !== "undefined"){ synth.onvoiceschanged = chooseVoice; }
+    if(synth){ chooseVoice(); synth.onvoiceschanged=chooseVoice; }
 
-    function speak(text){
-      if(!synth) return false;
-      try{
-        var u=new SpeechSynthesisUtterance(text);
-        if(voice){ u.voice=voice; u.lang=voice.lang }
-        else { u.lang=isTR?"tr-TR":"en-US" }
-        u.rate=0.98; u.pitch=1.0; u.volume=1.0;
-        synth.cancel();
-        synth.speak(u);
-        /* Chrome iOS/Android resume hack */
-        var iv=setInterval(function(){ try{ synth.resume(); if(!synth.speaking) clearInterval(iv); }catch(e){ clearInterval(iv) } }, 300);
-        return true;
-      }catch(e){ return false; }
+    function speakSegments(parts){
+      if(!synth || !parts || !parts.length) return;
+      synth.cancel(); chooseVoice();
+      var i=0;
+      function next(){
+        if(i>=parts.length) return;
+        var u=new SpeechSynthesisUtterance(parts[i++]);
+        if(voice){ u.voice=voice; u.lang=voice.lang } else { u.lang=isTR?"tr-TR":"en-US" }
+        u.rate=0.96; u.pitch=1.02;
+        u.onend=function(){ next(); };
+        try{
+          synth.speak(u);
+          var iv=setInterval(function(){ try{ synth.resume(); if(!synth.speaking) clearInterval(iv); }catch(e){ clearInterval(iv); } }, 300);
+        }catch(e){}
+      }
+      next();
     }
 
-    function start(){
-      if(started) return;
-      started = true;
-      var text = isTR
-        ? "Tayfun Toprakcıoğlu, geliştirici. Kısayollar: L LinkedIn, I Instagram, G GitHub, B blog, A yapay zeka, M mail, H anasayfa. Q tuşu sesi durdurur."
-        : "Tayfun Toprakcioglu, developer. Shortcuts: L LinkedIn, I Instagram, G GitHub, B blog, A A I, M mail, H home. Press Q to stop voice.";
-      var ok = speak(text);
-      if(ok){ btn.classList.add("hide"); }
+    function pageSummary(){
+      var name = (document.getElementById("name").textContent||"").trim();
+      var role = (document.querySelector("h2").textContent||"").trim();
+      var l1 = (document.querySelector("#intro .l1").textContent||"").trim();
+      var l2 = (document.querySelector("#intro .l2").textContent||"").trim();
+      var shortcutsTR = "Kısayollar: L LinkedIn, I Instagram, G GitHub, B blog, A yapay zeka, M mail, T anasayfa. Q sesi durdurur.";
+      var shortcutsEN = "Shortcuts: L LinkedIn, I Instagram, G GitHub, B blog, A AI, M mail, T home. Press Q to stop voice.";
+      return isTR ? [name+".", role+".", l1, l2, shortcutsTR] : [name+".", role+".", l1, l2, shortcutsEN];
     }
 
-    /* Oto başlatmayı hemen dene (masaüstünde genelde çalışır) */
-    window.addEventListener("load", function(){ setTimeout(start, 250); });
-
-    /* İlk kullanıcı etkileşiminde tekrar dener (mobil blokajı aşmak için) */
-    function arm(){ start(); document.removeEventListener("pointerdown", arm); document.removeEventListener("keydown", arm) }
-    document.addEventListener("pointerdown", arm, {once:true});
-    document.addEventListener("keydown", arm, {once:true});
-
-    /* Butonla manuel başlatma */
-    btn.addEventListener("click", start);
+    avatarBtn.addEventListener("click", function(e){
+      e.preventDefault();
+      speakSegments(pageSummary());
+    });
+    /* Q ile sesi kes */
+    document.addEventListener("keydown", function(e){ if((e.key||"").toLowerCase()==="q" && synth){ try{synth.cancel()}catch(_){ } } });
   })();
 </script>
 </body>

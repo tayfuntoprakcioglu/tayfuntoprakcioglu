@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>🚀 Tayfun Toprakçıoğlu | Personal Portfolio</h1>
+  <h1>TAYFUN TOPRAKCIOGLU</h1>
   <p>
     <strong>A modern, responsive, and multi-language personal portfolio website built with clean web standards.</strong>
   </p>

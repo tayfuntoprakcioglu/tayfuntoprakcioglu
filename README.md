@@ -1,172 +1,102 @@
 <div align="center">
-  <h1>🚀 Tayfun Toprakçıoğlu | Personal Portfolio</h1>
-  <p>
-    <strong>A modern, responsive, and multi-language personal portfolio website built with clean web standards.</strong>
-  </p>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=250&section=header&text=Hello%20World!&fontSize=70&fontAlign=50&animation=fadeIn&fontAlignY=35&desc=I%27m%20Tayfun%20Toprakçıoğlu&descAlign=50&descAlignY=60" alt="Tayfun Toprakçıoğlu Header" width="100%"/>
+</div>
+
+<div align="center">
   
-  <p>
-    <a href="#-overview">Overview</a> •
-    <a href="#-features">Features</a> •
-    <a href="#-tech-stack">Tech Stack</a> •
-    <a href="#-setup--usage">Setup</a> •
-    <a href="#-turkish-türkçe">Türkçe</a>
-  </p>
+  [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=24&pause=1000&color=2E6BFF&center=true&vCenter=true&width=500&lines=Full+Stack+Developer;UI%2FUX+Designer;Open+Source+Contributor;Tech+Content+Creator)](https://git.io/typing-svg)
 
   <p>
-    <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" alt="Maintained">
-    <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License">
-    <img src="https://img.shields.io/github/languages/top/tyfntprk/tt" alt="Language">
-    <img src="https://img.shields.io/badge/Portfolio-2026-orange" alt="Portfolio">
+    <a href="#-english">English</a> • <a href="#-türkçe">Türkçe</a>
   </p>
+
+  <a href="https://linkedin.com/in/tayfuntoprakcioglu">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+  </a>
+  <a href="mailto:contact@example.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
+  </a>
+  <a href="https://instagram.com/tyfntprk">
+    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram"/>
+  </a>
+
 </div>
 
 ---
 
-## 🌟 Overview
+<div id="-english"></div>
 
-This project is a high-performance, aesthetically pleasing personal portfolio website designed to showcase professional skills, projects, and experience. It features a custom-built multi-language system (TR/EN), interactive UI elements, and a clean, responsive design that works seamlessly across all devices.
+## 👨‍💻 About Me
 
-## ✨ Features
+Hello! I'm **Tayfun**, a passionate **Full Stack Developer** based in Turkey. I specialize in building modern, performant, and user-centric web applications. 
 
-*   **🌍 Multi-Language Support:** Full translation support for Turkish and English using a custom JSON-based localization system with fallback protection.
-*   **🎨 Modern UI/UX:** Glassmorphism effects, smooth transitions, and a "cool" color palette utilizing modern CSS variables.
-*   **📱 Fully Responsive:** Adaptive layout that looks great on mobile, tablet, and desktop (`grid` and `flex` layouts).
-*   **⚡ Performance First:** Minimized dependencies (Vanilla JS) for lightning-fast load times.
-*   **🛠️ Dynamic Content:** 
-    *   **Stats Section:** Highlights key achievements like "1M+ Social Media Shares" and "15+ Years Experience".
-    *   **Projects Showcase:** Featured sections for projects like *PixelBoost AI*, *Social Gen*, and *IBAN Validator*.
-*   **💸 Donation System:** Integrated modal for GitHub Sponsors and other support channels.
+*   🔭 I’m currently working on **AI-powered web tools & Open Source Projects**.
+*   🌱 I’m currently learning **Advanced Cloud Architecture & Web3**.
+*   💡 I love turning complex problems into simple, beautiful, and intuitive designs.
+*   🚀 **Motto:** "I always prioritize clean code, best practices, and user experience principles."
 
-## 🛠️ Tech Stack
+### 🛠️ Tech Stack & Tools
 
-*   **Structure:** HTML5 (Semantic)
-*   **Styling:** CSS3 (Variables, Flexbox, Grid, Animations)
-*   **Logic:** Vanilla JavaScript (ES6+)
-*   **Data:** JSON (for Localization)
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=js,html,css,react,vue,nodejs,php,laravel,mysql,git,vscode,figma,photoshop&perline=7" />
+</div>
 
-## 📂 Project Structure
+<br/>
 
-```bash
-tt/
-├── index.html        # Main HTML structure
-├── tt.css            # Stylesheet (Themes, Layouts, Animations)
-├── tt.js             # Core Logic (Translations, Modals, Interactivity)
-├── ttlang.json       # Translation Data (TR/EN)
-└── assets/           # Images and icons
-```
+### 📈 GitHub Stats
 
-## 🚀 Setup & Usage
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=tyfntprk&show_icons=true&theme=radical&hide_border=true&bg_color=0d1117" alt="Tayfun's GitHub Stats" height="180"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=tyfntprk&layout=compact&theme=radical&hide_border=true&bg_color=0d1117" alt="Top Languages" height="180"/>
+</div>
 
-Since this project uses vanilla technologies, no build process is required.
+### 🏆 Key Achievements
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/yourusername/tt.git
-    ```
-2.  **Open the project:**
-    Simply open the `index.html` file in your favorite browser.
-    *OR*
-    Use a live server extension (VS Code) or simple python server for a better experience:
-    ```bash
-    python3 -m http.server
-    ```
-
-## 🤝 Contributing
-
-Contributions are welcome! If you have suggestions for improvements or bug fixes:
-
-1.  Fork the repository.
-2.  Create a new branch (`git checkout -b feature/AmazingFeature`).
-3.  Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4.  Push to the branch (`git push origin feature/AmazingFeature`).
-5.  Open a Pull Request.
-
-## 📧 Contact
-
-**Tayfun Toprakçıoğlu**  
-Full Stack Developer & Digital Creator
-
-[LinkedIn](https://linkedin.com) • [GitHub](https://github.com) • [Email](mailto:contact@example.com)
+*   **~1M+** Social Media Shares & Interactions
+*   **~5 Years+** Active Book Industry Experience
+*   **~2M+** Book Cover, Banner & Slide Designs
+*   **2014** Writing Open Source Code Since...
 
 ---
 
-<div align="center" id="-turkish-türkçe">
-  <h1>🇹🇷 Tayfun Toprakçıoğlu | Kişisel Portfolyo</h1>
-  <p>
-    <strong>Modern, responsive ve çok dilli; temiz web standartları ile inşa edilmiş kişisel portfolyo web sitesi.</strong>
-  </p>
-  
-  <p>
-    <a href="#-genel-bakış">Genel Bakış</a> •
-    <a href="#-özellikler">Özellikler</a> •
-    <a href="#-teknolojiler">Teknolojiler</a> •
-    <a href="#-kurulum">Kurulum</a> •
-    <a href="#-overview">English</a>
-  </p>
+<div id="-türkçe"></div>
+
+## 👨‍💻 Hakkımda
+
+Merhaba! Ben **Tayfun**, Türkiye'de yaşayan tutkulu bir **Full Stack Developer**'ım. Modern, performanslı ve kullanıcı odaklı web uygulamaları geliştirme konusunda uzmanım.
+
+*   🔭 Şu anda **Yapay Zeka destekli web araçları & Açık Kaynak Projeler** üzerinde çalışıyorum.
+*   🌱 Şu anda **İleri Seviye Bulut Mimarisi & Web3** öğreniyorum.
+*   💡 Karmaşık problemleri basit, estetik ve sezgisel tasarımlara dönüştürmeyi seviyorum.
+*   🚀 **Motto:** "Clean code, best practices ve kullanıcı deneyimi prensiplerini her zaman ön planda tutuyorum."
+
+### 🛠️ Teknolojiler & Araçlar
+
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=js,html,css,bootstrap,jquery,python,postman,docker,linux,github,vercel,idea,ai&perline=7" />
 </div>
 
-## 🌟 Genel Bakış
+<br/>
 
-Bu proje, profesyonel yetenekleri, projeleri ve deneyimleri sergilemek için tasarlanmış yüksek performanslı ve estetik bir kişisel web sitesidir. Özel olarak geliştirilmiş çoklu dil sistemi (TR/EN), etkileşimli arayüz öğeleri ve tüm cihazlarda sorunsuz çalışan temiz, duyarlı bir tasarıma sahiptir.
+### 📈 İstatistikler
 
-## ✨ Özellikler
+<div align="center">
+  <a href="https://github.com/tyfntprk">
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=tyfntprk&theme=radical&hide_border=true&background=0d1117" alt="GitHub Streak" />
+  </a>
+</div>
 
-*   **🌍 Çoklu Dil Desteği:** JSON tabanlı özel lokalizasyon sistemi ile Türkçe ve İngilizce arasında anlık geçiş (Yedekleme/Fallback korumalı).
-*   **🎨 Modern UI/UX:** Glassmorphism efektleri, yumuşak geçişler ve modern CSS değişkenleri kullanan "soğuk" renk paleti.
-*   **📱 Tamamen Responsive:** Mobil, tablet ve masaüstünde mükemmel görünen uyarlanabilir düzen (`grid` ve `flex` yapıları).
-*   **⚡ Performans Odaklı:** Şişirilmiş kütüphaneler yerine saf (Vanilla) JavaScript kullanımı ile ışık hızında açılış.
-*   **🛠️ Dinamik İçerik:** 
-    *   **İstatistik Alanı:** "~1M+ Sosyal Medya Paylaşımı" ve "15+ Yıl Deneyim" gibi kilit başarıların vurgulandığı alan.
-    *   **Proje Vitrini:** *PixelBoost AI*, *Social Gen* ve *IBAN Doğrulayıcı* gibi projelerin sergilendiği özel bölümler.
-*   **💸 Bağış Sistemi:** GitHub Sponsors ve diğer destek kanalları için entegre edilmiş modal yapısı.
+### 🏆 Başarılar & Kilometre Taşları
 
-## 🛠️ Teknolojiler
+*   **~1M+** Sosyal Medya Paylaşımı Yapmaya Devam Ediyor..
+*   **~5 Yıl+** Aktif Kitap Sektörü Deneyimi.
+*   **~2M+** Kitap Kapak Fotoğrafı, Banner ve Slayt Tasarımı.
+*   **2014** Yılından Beri Açık Kaynak Kod Yazıyor..
 
-*   **Yapı:** HTML5 (Semantik etiketler)
-*   **Stil:** CSS3 (Variables, Flexbox, Grid, Animasyonlar)
-*   **Mantık:** Vanilla JavaScript (ES6+)
-*   **Veri:** JSON (Çeviri yönetimi için)
+---
 
-## 📂 Proje Yapısı
-
-```bash
-tt/
-├── index.html        # Ana HTML yapısı
-├── tt.css            # Stil dosyası (Temalar, Düzen, Animasyonlar)
-├── tt.js             # Çekirdek Mantık (Çeviriler, Modallar, Etkileşim)
-├── ttlang.json       # Çeviri Verileri (TR/EN)
-└── assets/           # Görseller ve ikonlar
-```
-
-## 🚀 Kurulum
-
-Bu proje saf web teknolojileri kullandığı için karmaşık bir derleme (build) işlemine ihtiyaç duymaz.
-
-1.  **Depoyu klonlayın:**
-    ```bash
-    git clone https://github.com/kullaniciadiniz/tt.git
-    ```
-2.  **Projeyi açın:**
-    `index.html` dosyasını tarayıcınızda açmanız yeterlidir.
-    *VEYA*
-    Daha iyi bir deneyim için VS Code Live Server veya basit bir terminal sunucusu kullanabilirsiniz:
-    ```bash
-    python3 -m http.server
-    ```
-
-## 🤝 Katkıda Bulunma
-
-Katkılarınızı bekliyorum! İyileştirme önerileriniz veya hata düzeltmeleriniz varsa:
-
-1.  Projeyi Fork'layın.
-2.  Yeni bir Branch oluşturun (`git checkout -b feature/HarikaOzellik`).
-3.  Değişikliklerinizi Commit'leyin (`git commit -m 'HarikaOzellik Eklendi'`).
-4.  Branch'inizi Push'layın (`git push origin feature/HarikaOzellik`).
-5.  Bir Pull Request (Çekme İsteği) açın.
-
-## 📧 İletişim
-
-**Tayfun Toprakçıoğlu**  
-Full Stack Developer & Digital Creator
-
-[LinkedIn](https://linkedin.com) • [GitHub](https://github.com) • [Email](mailto:contact@example.com)
+<div align="center">
+  <p>⭐️ Bu projeyi beğendiyseniz yıldızlamayı unutmayın!</p>
+  <p>Thanks for visiting my profile!</p>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer" width="100%"/>
+</div>
